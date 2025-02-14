@@ -72,7 +72,7 @@ p {
 }
 
 /* 📱 Mobile Optimizations */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   .paper {
     padding: 15px 5vw;
     transform: rotateZ(0deg);
@@ -90,7 +90,7 @@ p {
 
   img {
     max-height: 25vh;
-  }
+  }*/
 
   p {
     font-size: 6vw;
