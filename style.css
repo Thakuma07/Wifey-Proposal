@@ -1,53 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
 
-
-
-
 body {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background-size: 1000px;
+  background-size: cover;  /* Adjusts to screen size */
   background-image: url("images/bg.jpeg");
   background-position: center center;
+  margin: 0;
 }
 
+/* Main paper container */
 .paper {
   background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
-  background-size: 500px;
+  background-size: contain;
   background-position: center center;
-  padding: 20px 100px;
-/*  min-width: 800px; */
-  
+  padding: 20px 10vw;  /* Responsive padding */
+  max-width: 90vw;  /* Limits size on small screens */
   transform: rotateZ(-5deg);
   box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
-  
   position: absolute;
+  text-align: center;
 }
 
+/* Heart Shape */
 .paper.heart {
-  position: relative;
-  width: 200px;
-  height: 200px;
+  width: 150px; /* Smaller on mobile */
+  height: 150px;
   padding: 0;
   border-radius: 50%;
 }
 
+/* Image inside Paper */
 .paper.image {
-  padding: 10px;
+  padding: 5vw;
 }
 .paper.image p {
-  font-size: 30px;
+  font-size: 5vw; /* Responsive font size */
 }
 
 img {
-  max-height: 200px;
+  max-height: 30vh; /* Ensures it resizes properly */
   width: 100%;
   user-select: none;
 }
 
+/* Heart Overlay */
 .paper.heart::after {
   content: "";
   background-image: url('https://cdn.pixabay.com/photo/2016/03/31/19/25/cartoon-1294994__340.png');
@@ -56,18 +55,44 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  background-size: 150px;
-  background-position: center center;
+  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
   opacity: 0.6;
 }
 
+/* Text Styling */
 p {
   font-family: 'Zeyada';
-  font-size: 50px;
+  font-size: 8vw; /* Makes text responsive */
   color: rgb(0,0,100);
   opacity: 0.75;
   user-select: none;
-  
-   filter: drop-shadow(2px 1.5px 1px rgba(0,0,105,0.9));
+  filter: drop-shadow(2px 1.5px 1px rgba(0,0,105,0.9));
+}
+
+/* 📱 Mobile Optimizations */
+@media (max-width: 768px) {
+  .paper {
+    padding: 15px 5vw;
+    transform: rotateZ(0deg);
+    max-width: 90%;
+  }
+
+  .paper.heart {
+    width: 120px;
+    height: 120px;
+  }
+
+  .paper.image p {
+    font-size: 6vw;
+  }
+
+  img {
+    max-height: 25vh;
+  }
+
+  p {
+    font-size: 6vw;
+  }
 }
