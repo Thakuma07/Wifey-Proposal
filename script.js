@@ -2,6 +2,10 @@ window.addEventListener("mousemove", () => {
   document.querySelector(".song").play();
 });
 
+window.addEventListener("touchmove", () => {
+  document.querySelector(".song").play();
+});
+
 let highestZ = 1;
 
 class Paper {
